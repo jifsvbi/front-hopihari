@@ -18,10 +18,9 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
         const data = await response.json();
         
         if (response.ok) {
-            // Salvar dados do usuário no localStorage (para demonstração)
             localStorage.setItem('token', JSON.stringify(data.token));
-            
-            // Redirecionar para a página principal (após login bem-sucedido)
+            localStorage.setItem('user', JSON.stringify(data.user));
+
             alert('Login realizado com sucesso!');
             window.location.href = '../dashboard/dashboard.html';  // Página após login
         } else {
