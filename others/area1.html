@@ -299,59 +299,6 @@
     <div class="footer">
         &copy; 2025 Parque HOPIhARI - Sistema de Gerenciamento de Filas
     </div>
-
-    <script>
-        // Código para atualização em tempo real
-        function atualizarTemposEspera() {
-            // Em uma implementação real, aqui faria uma chamada AJAX para o servidor
-            // para obter os dados atualizados das filas
-            
-            // Simulação de atualização para demonstração
-            const agora = new Date();
-            document.querySelector('.last-update').textContent = 
-                `Última atualização: ${agora.toLocaleDateString()} ${agora.toLocaleTimeString()}`;
-        }
-
-        // Atualizar a cada 30 segundos
-        setInterval(atualizarTemposEspera, 30000);
-    </script>
     
-    
-
-    <script>
-        // Verificar se há um usuário logado
-        document.addEventListener('DOMContentLoaded', function() {
-            const userData = JSON.parse(localStorage.getItem('user')) || {};
-            
-            if (userData.firstName) {
-                document.getElementById('user-name').textContent = `Olá, ${userData.firstName}!`;
-                document.getElementById('user-email').textContent = userData.email;
-            } else {
-                // Redirecionar para a página de login se não houver usuário
-                window.location.href = '/';
-            }
-            
-            // Botão de logout
-            document.getElementById('logout-btn').addEventListener('click', function() {
-                localStorage.removeItem('user');
-                window.location.href = '/';
-            });
-            
-            // Toggle do menu lateral (para mobile)
-            document.getElementById('menu-toggle').addEventListener('click', function() {
-                document.getElementById('sidebar').classList.toggle('active');
-            });
-            
-            // Fechar menu ao clicar em um item (para mobile)
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    if (window.innerWidth <= 992) {
-                        document.getElementById('sidebar').classList.remove('active');
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
